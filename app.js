@@ -5,9 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const coordsDisplay = document.getElementById('coords-display');
     
     // Configuração de Teste: Mude para 'false' para usar a geolocalização real do seu dispositivo.
-    const TESTING_MODE = true; 
-    const TEST_LAT = -23.5613; // Exemplo: Avenida Paulista, São Paulo
-    const TEST_LON = -46.6561; // Exemplo: Avenida Paulista, São Paulo
+    const TESTING_MODE = false; 
+    const TEST_LAT = -23.5613; // Exemplo: Avenida Paulista, São Paulo (usado apenas se TESTING_MODE for true)
+    const TEST_LON = -46.6561; // Exemplo: Avenida Paulista, São Paulo (usado apenas se TESTING_MODE for true)
 
     // API CityBikes, usando o endpoint específico para São Paulo (Bike Sampa/Itaú).
     const BIKE_API_URL = 'https://api.citybik.es/v2/networks/bikesampa'; 
@@ -168,6 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
         coordsDisplay.textContent = '';
         
         if (TESTING_MODE) {
+            // Este bloco agora é pulado
             updateStatus('1. Modo de teste ativo! Usando coordenadas de São Paulo (Av. Paulista)...');
             fetchStations(TEST_LAT, TEST_LON);
             return;
