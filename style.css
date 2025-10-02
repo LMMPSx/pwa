@@ -1,0 +1,38 @@
+:root { 
+    --main-color: #FF7A00; /* Laranja Itaú */
+    --dark-color: #333; 
+}
+body { 
+    font-family: 'Inter', sans-serif; 
+    background-color: #f4f4f9; 
+}
+#app-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+.station-card { /* Classe atualizada */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+.station-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+.loader {
+    /* Cores ajustadas para laranja */
+    border: 4px solid rgba(255, 122, 0, 0.3); 
+    border-top: 4px solid var(--main-color);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    margin-right: 0.5rem;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
